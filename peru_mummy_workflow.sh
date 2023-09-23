@@ -81,7 +81,9 @@ samtools bam2fq -@ 20 -1 SRR21031366_unmapped_R1.fastq -2 SRR21031366_unmapped_R
 #   Build the database first
 kraken2-build --build --standard --db kraken_standard -threads 10
 kraken2-build --db kraken_standard --download-taxonomy --threads 10
-kraken2-build --build --db kraken_standard -threads 10
+kraken2-build --build --db kraken_standard --threads 10
+# Optional cleanup
+# kraken2-build --clean --db kraken_standard --threads 10
 
 
 # NOTE: /u/VerbalCant to build new nt database after processing, since she has a 16TB drive
